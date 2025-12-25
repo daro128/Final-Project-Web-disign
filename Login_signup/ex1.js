@@ -24,3 +24,19 @@ loginForm.addEventListener('submit', (e) => {
         alert('Please enter your username.');
     }
 });
+
+const registerForm = document.querySelector('.register form');
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+
+    const username = document.getElementById('registerUsername').value.trim();
+    if(username) {
+        localStorage.setItem('loggedInUser', username);
+        alert(`Welcome, ${username}! You are now already register in.`);
+        window.location.href = '../Homepage/ex1.html';
+    } else {
+        alert('Please enter your username.');
+    }
+});
+
+
